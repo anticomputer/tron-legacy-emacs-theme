@@ -9,66 +9,97 @@
 <p align="center">
 <a href="https://github.com/ianpan870102/tron-legacy-emacs-theme"><img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintenance"></a>
 <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="GPL License"></a>
+<a href="https://github.com/ianpan870102/.emacs.d"><img src="https://img.shields.io/github/release/ianpan870102/tron-legacy-emacs-theme" alt="Version"></a>
 <a href="https://github.com/sindresorhus/awesome"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome"></a>
 </p>
 
 <br/>
 
-<p align="center">Inspired by Base16-Black-Metal, Doom, Grayscale and City Lights.</p>
+<p align="center">Inspired by Base16-Black-Metal, Grayscale and City Lights.</p>
+
+<p align="center">
+  <img src="http://imgs.abduzeedo.com/files/tutorials/Tron_Logo_Tutorial/Step_23_-_Logo_Conclusion.jpg" width="400" />
+</p>
 
 
-### Invoking the theme:
+### Installing the theme:
 
+
+#### Installation Method 1: MELPA (Recommended)
+
+`tron-legacy-theme` is now on MELPA as a package (as of 1. June. 2020)! An example use-package declaration:
+
+```emacs-lisp
+(use-package tron-legacy-theme
+  :config
+  (load-theme 'tron-legacy t))
+```
+
+If you want to invoke some customization options (more info see below), you should set them "before" you load the theme, like so:
+
+```emacs-lisp
+(use-package tron-legacy-theme
+  :config
+  (setq tron-legacy-theme-vivid-cursor t)
+  (load-theme 'tron-legacy t))
+```
+
+
+
+#### Installation Method 2: manual install
 
 Download `tron-legacy-theme.el` and put it under `~/.emacs.d/themes/` (or `~/.config/emacs/themes/`), then add these lines to your `init.el`:
 
-```
+```emacs-lisp
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-# or 
+; or
 (add-to-list 'custom-theme-load-path "~/.config/emacs/themes/")
 
-(load-theme `tron-legacy t)
+(load-theme 'tron-legacy t)
 ```
-
-<br>
 
 ### Customization options:
 
-1. Setting `tron-legacy-dark-fg-bright-comments` to `t` causes the foreground to be dimmed and comments to be brighter (comments will be brighter than default foreground), as presented in the screenshot. The default value is `nil` (default foreground is brighter than the comments).
+1. Setting `tron-legacy-theme-dark-fg-bright-comments` to `t` causes the foreground to be dimmed and comments to be brighter. The default value is `nil`.
 
 ```emacs-lisp
-(setq tron-legacy-dark-fg-bright-comments t)
+(setq tron-legacy-theme-dark-fg-bright-comments t)
 ```
 
-2. Setting `tron-legacy-vivid-cursor` to `t` changes the cursor colour to bright golden, making it easier to spot.
+2. Setting `tron-legacy-theme-vivid-cursor` to `t` changes the cursor color to bright golden, making it easier to spot.
 
 ```emacs-lisp
-(setq tron-legacy-vivid-cursor t)
+(setq tron-legacy-theme-vivid-cursor t)
 ```
 
-<br>
-<br>
+3. Setting `tron-legacy-theme-softer-bg` to `t` changes the background color to a dark gunmetal grey, instead of the default pure black.
 
-### Screenshots:
+```emacs-lisp
+(setq tron-legacy-theme-softer-bg t)
+```
 
-(left to right) Treemacs | Emacs Lisp | JSX
+### Screenshots of various modes:
 
-<img src="./screenshot1-tron.png" width=900>
-
-<br>
-
-(left to right) Treemacs | Emacs Lisp | JSX/HTML | Which-key
-
-<img src="./screenshot2-tron.png" width=900>
-
-
+<p align="center">
+  <img src="./screenshots/cpp.png" width=800>
+  <img src="./screenshots/log.png" width=800>
+  <img src="./screenshots/js.png" width=800>
+  <img src="./screenshots/magit.png" width=800>
+</p>
 
 <br>
+
+### Main color palette:
+
+
+<p align="center">
+<img src="./screenshots/tron-palette.png" width=900>
+</p>
+
 <br>
 
 
-
-Copyright© 2018-2020 Ian Y.E. Pan
+Copyright© 2018-2023 Ian Y.E. Pan
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
